@@ -1,11 +1,11 @@
 let url = 'http://localhost:3000/films'
 const unorderedListElement = document.getElementById('films')
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementsByClassName('film item')[0].remove()
+    document.getElementsByClassName('film item')[0].remove() //remove `li` hardcoded placeholder element
     fetchMovies(url)
 })
 
-//Create fetch function
+//create fetch function
 function fetchMovies(url){
     fetch(url)
     .then(response => response.json())
@@ -17,7 +17,6 @@ function fetchMovies(url){
 }
 
 function displayMovie(movie){
-   
     const li = document.createElement('li')
     li.style.cursor="pointer"
     li.textContent= (movie.title).toUpperCase()
@@ -26,12 +25,10 @@ function displayMovie(movie){
 }
 function addClickEvent(){
     let children=unorderedListElement.children
-    // console.log(children)
-
+    
+// loop through
     for(let i=0; i<children.length; i++){
         let child=children[i]
-        // console.log(child)
-
         child.addEventListener('click',() => {
             fetch(`${url}/${i+1}`)
 
