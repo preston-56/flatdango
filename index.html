@@ -1,14 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<DOCTYPE html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FIlm Ticket Booking App</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>Film Booking App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    
   </head>
-  <body onload="getFilms()">
-    <div id="film-list"></div>
+  <body>
+    <!-- navbar -->
+    <div class="heading">
+      <div class="item">
+        <h2 class="ui header">
+          
+          <div class="content">FLATDANGO</div>
+          <div class="sub header" id="subtitle">BUY MOVIE TICKETS</div>
+        </h2>
+      </div>
+    </div>
+
+    <div class="ui centered grid">
+      <div class="four wide column">
+        <div class="list-container">
+          <!-- side menu -->
+          <ul class="ui divided list" id="films">
+            <li class="film item">Movie titles will go here.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- poster -->
+      <div class="four wide column">
+        <img
+          id="poster"
+          src="./assets/anika-mikkelson-dWYjy9zIiF8-unsplash.jpg"
+          alt="[FILM TITLE]"
+        />
+      </div>
+
+      <!-- showing info -->
+      <div class="four wide column">
+        <div class="ui cards" id="showing">
+          <div class="card">
+            <div id="title" class="title">[FILM TITLE]</div>
+            <div id="runtime" class="meta">[RUNTIME] minutes</div>
+            <div class="content">
+              <div class="description">
+                <div id="film-info">[FILM DESCRIPTION]</div>
+                <span id="showtime" class="ui blue label">[SHOWTIME]</span>
+                <span id="ticket-num">[X]</span> remaining tickets
+              </div>
+            </div>
+            <div class="extra content">
+              <button id="buy-ticket" class="ui blue button">
+                Buy Ticket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./src/script.js"></script>
   </body>
 </html>
