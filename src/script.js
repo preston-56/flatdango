@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //create fetch function
-function fetchMovies(url) {
-  fetch(url)
+async function fetchMovies(url) {
+  await fetch(url)
     .then((response) => response.json())
     .then((movies) => {
       movies.forEach((movie) => {
@@ -20,13 +20,13 @@ function fetchMovies(url) {
 function displayMovie(movie) {
   const li = document.createElement("li");
   li.style.cursor = "pointer";
-  li.textContent = movie.title.toUpperCase();
+li.textContent = movie.title.toUpperCase();
   unorderedListElement.appendChild(li);
   addClickEvent();
 }
 // add click event to films
 function addClickEvent() {
-  let children = unorderedListElement.children;
+  //let children = unorderedListElement.children;
 
   // loop through
   for (let i = 0; i < children.length; i++) {
@@ -68,3 +68,5 @@ btn.addEventListener("click", function (e) {
     btn.textContent = "Sold Out";
   }
 });
+
+
