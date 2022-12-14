@@ -26,7 +26,7 @@ li.textContent = movie.title.toUpperCase();
 }
 // add click event to films
 function addClickEvent() {
-  //let children = unorderedListElement.children;
+  let children = unorderedListElement.children;
 
   // loop through
   for (let i = 0; i < children.length; i++) {
